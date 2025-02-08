@@ -5,7 +5,6 @@ int main() {
     
         char estado;
         char codigo_da_carta[3];
-        char nome_estado[40];
         char nome_cidade[50];
         int numero_da_cidade;
         int populacao;
@@ -23,16 +22,12 @@ int main() {
         printf("A inicial do estado escolhido foi: %c \n", estado);
 //Incial do Estado para calcular o código da carta;
 
-        printf("Digite o nome do estado: \n");
-        scanf(" %s", &nome_estado);
-        printf("O estado escolhido foi: %s \n", nome_estado);
-//Nome do estado;
 
 
         printf("Digite o nome da cidade: \n");
-        scanf(" %s", &nome_cidade);
+        scanf(" %s", nome_cidade);
         printf("A cidade escolhida foi %s \n", nome_cidade);
-// Nome da cidade;
+// Nome da cidade; Erro dizendo que o formato %s de string, espera uma variavel de valor char, porém a variavel é valor char e não consta.
 
 
         printf("Digite o número da cidade (de 1 à 4.): \n");
@@ -54,27 +49,43 @@ int main() {
         scanf(" %f", &area_em_km2);
         printf("A área da cidade é de: %f \n", area_em_km2);
 //Área da cidade;
+        float densidade = populacao / area_em_km2;
+        printf("*A densidade populacional é de: %.3f\n", densidade);
+// Código para calcular a densidade;
+
+
+
+
 
         printf("Insira o Pib da cidade: \n");
         scanf(" %f", &pib);
         printf("Pib da cidade escolhida: %f \n", pib);
 //Pib da cidade;
+        float pibP = pib / populacao;
+        printf("*O pib per capita é de: %.3f\n", pibP);
+//Código para calcular o Pib Per Capita;
+
+
 
         printf("Insira a quantidade de pontos turísticos que a cidade possui: \n");
         scanf(" %d", &nmr_de_pts_turisticos); 
         printf("Quantidade de pontos turisticos da cidade escolhida: %d\n", nmr_de_pts_turisticos);
+
 //Pontos turísticos da cidade;
-        
-        printf("Resumo da carta cadastrada:\n");
-        printf("Nome da cidade: %s \n", nome_cidade);
-        printf("Nome do Estado: %s \n", nome_estado);
-        printf("Inicial do estado: %c \n", estado);
-        printf("Número da cidade escolhida: %d \n", numero_da_cidade);
-        printf("Código da Carta: %s \n", codigo_da_carta);
-        printf("População da área escolhida: %d \n", populacao);
-        printf("Área da cidade: %f \n", area_em_km2);
-        printf("Pib da cidade: %f \n", pib);
-        printf("Quantidade de pontos turísticos %d \n", nmr_de_pts_turisticos);
+
+
+  
+        printf("*****Resumo da carta cadastrada*****\n");
+        printf("*Nome da cidade: %s \n", nome_cidade); //Erro parecido com a primeira variavel, não consigo resolver, não aparece nada no resumo. Apenas a linha "nome da cidade."
+        printf("*Inicial do estado: %c \n", estado);
+        printf("*Número da cidade escolhida: %d \n", numero_da_cidade);
+        printf("*Código da Carta: %s \n", codigo_da_carta);
+        printf("*População da área escolhida: %d \n", populacao);
+        printf("*Área da cidade: %f \n", area_em_km2);
+        printf("*Pib da cidade: %f \n", pib);
+        printf("*Quantidade de pontos turísticos %d \n", nmr_de_pts_turisticos);
+        printf("*Pib per capita da carta: %.3f\n", pibP);
+        printf("*Densidade populacional da carta: %.2f", densidade);
         
 //Resumo do resultado das cartas, apresentadas linha por linha.
 
